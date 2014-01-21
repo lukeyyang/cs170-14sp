@@ -1,0 +1,113 @@
+%%
+% Sample article using the amsart style
+% Based on an example provided by AMS
+% modified somewhat for use at NIU Math Dept.
+%
+\documentstyle{amsart}
+
+%%
+% BibTeX logo; normally not needed
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+%%
+\hfuzz1pc % Don't bother to report overfull boxes if overage is < 1pc
+
+%       Theorem environments
+% theorem numbering gets reset to 1 in each section
+\newtheorem{thm}{Theorem}[section]
+% most others are numbered together with theorems
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{exmp}[thm]{Example}
+%%
+% just an example of what will happen if you skip the [thm]
+% part -- conjectures will be numbered consecutively
+\newtheorem{conj}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem{notation}{Notation}
+\renewcommand{\thenotation}{}  % to make the notation environment unnumbered
+
+%%
+% equation counter will be reset at the start of each section
+\numberwithin{equation}{section}
+
+%       Math definitions
+% Blackboard Bold letters
+\newcommand{\C}{\mathbbb{C}}
+\newcommand{\N}{\mathbbb{N}}
+\newcommand{\Q}{\mathbbb{Q}}
+\newcommand{\R}{\mathbbb{R}}
+\newcommand{\Z}{\mathbbb{Z}}
+% operators
+\newcommand{\cov}{\operatorname{cov}}
+\newcommand{\cf}{\operatorname{cf}}
+\newcommand{\add}{\operatorname{add}}
+\newcommand{\non}{\operatorname{non}}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\End}{\operatorname{End}}
+
+\begin{document}
+
+\title[AMSTEX/AMSART Sample Paper] % running head version
+{Sample Paper for the `AMSTEX' Option\\
+and the `AMSART' Documentstyle}
+
+%%
+% See the complete version of this file, testart.tex, for more
+% complicated examples
+%
+\author{Umberto Orsini}
+\address[Umberto Orsini]{Department of Mathematical Sciences\\
+        Northern Illinois University\\
+        DeKalb, Illinois 60115}
+%% Note the doubled @@:
+\email[U.~Orsini]{orsini@@math.niu.edu}
+\thanks{Research supported in part by NSF grant
+CCR-87-10433 and DARPA Contract N00019-89-J-1988.}
+
+\date{July 25, 1994}
+
+\subjclass{Primary 05C38, 15A15; Secondary 05A15, 15A18}
+
+\maketitle
+
+\begin{abstract}
+This paper is a sample illustrating  the use
+of the American Mathematical Society preprint
+documentstyle, \verb+amsart+, and the use of bibliography
+databases. It should be processed with \AmS-\LaTeX\ first,
+then ran through \BibTeX, and through \AmS-\LaTeX\ at least
+once more.
+\end{abstract}
+
+\section{Introduction}
+\label{intro}
+This paper illustrates the use of the {\tt amsart} documentstyle, as
+well as the use of features from the {\tt amstex} option.  It is a 
+greatly abbreviated skeleton version of the file {\tt testart.tex}
+provided by the \AmS. 
+
+\section{Enumeration of Hamiltonian paths in a graph}
+Let $\bold A=(a_{ij})$ be the adjacency matrix of
+graph $G$ (\cite{lewi:plur86}). 
+
+The corresponding Kirchhoff matrix $\bold K=(k_{ij})$ is obtained from 
+$\bold A$ by replacing in $-\bold A$ each diagonal entry by the degree of its
+corresponding vertex (see \cite{chom:barr86}, \cite{barw:mode89}, and
+\cite{chel:moda80}); i.e., the $i$th diagonal entry is identified
+with the degree of the $i$th vertex.
+
+[Rest of your article goes here]
+
+\bibliographystyle{amsplain}
+%%
+% requires a BiBTeX file sample.bib
+\bibliography{sample}
+
+\end{document}
+

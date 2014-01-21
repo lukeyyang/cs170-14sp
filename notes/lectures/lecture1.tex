@@ -1,0 +1,65 @@
+\section{Lecture 1, Monday, January 13}
+
+Course goals: Discrete math and problem solving skills with a wide range of topics.
+
+Review: Sets, functions, sequences
+
+\begin{defn}
+A set is an unordered collection of objects.
+\end{defn}
+
+\begin{defn}
+Two sets are equal if and only if they have the same elements (aka objects, or members).
+\end{defn}
+
+Venn graph
+
+Universal set $U$ contains all objects under consideration.
+
+\begin{defn}
+The intersection of sets $S_1$ and $S_2$, denoted by $S_1 \cap S_2$, is the set that contains those elements in both $S_1$ and $S_2$. $S_1 \cap S_2 = \{ x | x \in S_1 \land x \in S_2 \}$
+\end{defn}
+
+\begin{defn}
+The union of sets $S_1$ and $S_2$, denoted by $S_1 \cup S_2$, is the set that contains those elements that are either in $S_1$ or $S_2$, or both. $S_1 \cup S_2 = \{ x | x \in S_1 \lor x \in S_2 \}$
+\end{defn}
+
+\begin{defn}
+The complement of set $S$, denoted by $\overline S$, is the set that contains those elements that are in the universal set $U$ but not in $S$. ${\overline S} = \{ x | x \notin S \}$
+\end{defn}
+
+Empty set $\O = {\overline U}$
+
+\begin{defn}
+Two sets $S_1$ and $S_2$ are disjoint if $S_1 \cap S_2 = \O$.
+\end{defn}
+
+Generalized intersection $$\bigcap_{i = 1}^n S_i = S_1 + S_2 + \cdots + S_n$$
+
+Generalized union $$\bigcup_{i = 1}^n S_i$$
+
+\begin{defn}
+Set $A$ is a subset of set $B$, denoted by $A \subseteq B$, if and only if everything in $A$ is in $B$.
+\end{defn}
+
+\begin{theorem}
+Any set is a subset of itself. $\O$ is a subset of any set. 
+\end{theorem}
+
+If two sets are subsets of each other, two sets are equal.
+
+\begin{defn}
+Set $A$ is a strict subset of set $B$, denoted by $A \subset B$, if $A \subseteq B$ and $A \neq B$. 
+\end{defn}
+
+$A \subset B \Rightarrow A \subseteq B$, and its opposite is not true.
+
+\begin{ex}
+7 stamps: 2 red, 2 yellow, 3 green. A, B, C, are three perfect logicians. A removes blindfold and can't tell any conclusions about the colors about who's wearing what. B can't either.
+
+From what A said, B and C can't wear red or yellow together. C wears green.
+\end{ex}
+
+\begin{ex}
+3 Truth machines are in stock. A machine corresponds true/false to red/green, but patterns for different machines can be different. 1 machine is broken (it answers arbitrarily) and 2 are working. Ask one single question (with a single yes/no answer) to one machine and determine which two are working.
+\end{ex}
