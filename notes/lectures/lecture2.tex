@@ -1,5 +1,28 @@
 \section{Lecture 2, Thursday, January 15}
 
+\begin{ex}
+3 Truth machines are in stock. A machine corresponds true/false to red/green, but patterns for different machines can be different. 1 machine is broken (it answers arbitrarily) and 2 are working. Ask one single question (with a single yes/no answer) to one machine and determine which two are working.
+\end{ex}
+
+\begin{soln}
+Ask M1: is it the case that exactly one of these is true: Red means yes; 2nd
+machine is broken.
+
+If Red, choose M2; if Green, choose M3.
+
+Assume M1 works, and red means yes. Then it answers red if the 2nd machine
+works.
+
+Assume M1 works, and green means yes. Then it answers green if the 2nd machine
+is broken.
+
+Assume M1 works, both M2 and M3 work. Choosing either would be good.
+
+
+Another method: meta-question: If I'd asked you, ``Is machine 2 broken?'', would
+you answer green?
+\end{soln}
+
 \begin{defn}
 
 The cardinality of a set $A$, denoted by $|A|$, is the number of distinct elements in $A$.

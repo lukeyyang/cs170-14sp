@@ -1,1 +1,111 @@
 \section{Lecture 3, Wednesday, January 22}
+
+
+Running time analysis: analyzing sorting algorithms. Look into details of merge
+sort and selection sort.
+
+
+\begin{algorithm}[Algorithm]
+\SetKwData{Array}{array}
+\SetKwData{A}{A}
+\SetKwData{B}{B}
+\SetKwData{C}{C}
+\SetKwData{n}{n}
+%\SetKwData{High}{high}
+%\SetKwData{Mid}{mid}
+%\SetKwData{Low}{low}
+\SetKwFunction{MergeSort}{MergeSort}
+\SetKwFunction{Merge}{Merge}
+%\KwData{an array of ordered numbers \List given, initially $\Low = 1$ and $\High
+%= n$}
+%\SetKwInOut{Input}{Input}
+%\SetKwInOut{Output}{Output}
+%\Input{$\Target = a$ given}
+%\Output{the index of the member in \List that equals \Target, if found in \List}
+\SetAlgoLined
+\DontPrintSemicolon
+$\mathbf{Function}$ \MergeSort{\Array \A$[1:\n]$}\;
+\uIf{\n == 1}{
+        \Return \A
+}
+B = \MergeSort(\A$\left[1:\dfrac{\n}{2}\right]$)\;
+C = \MergeSort(\B$\left[\dfrac{\n}{2} + 1:\n\right]$)\;
+\Return \Merge(\B, \C)\;
+\end{algorithm}
+
+
+
+Merge sort is better. Why? It has less total operations than selection sort. Count up the number of operations, but some operations take longer.
+
+
+
+"if I double the size of input, how much does the runtime increase?"
+
+$n \rightarrow$ double
+
+$20n \rightarrow$ double
+
+$10n + 37 \rightarrow$ double
+
+large runtime $Cn +$ smaller terms $\rightarrow$ double
+
+$n^2 \rightarrow 4\times$
+
+$n^4 \rightarrow 16\times$
+
+$n^5 + 10n^3 + 21 \rightarrow 32\times$
+
+Polynomial times $Cn^d +$ smaller terms, increase by a constant factor $2^d$
+
+Selection fort, number of operations $\simeq n^2$
+
+$$ \sum_{i = 1}^n i = \dfrac{n(n + 1)}{2} \simeq n^2$$
+
+Optimize this algorithm: Check if the list is sorted ($n$), it not, run Selection sort ($n^2$). We say $n^2$ because we analyze worst-case scenario.
+
+In the average case, it'll be the same anyway (in this case it is true). $\dfrac{n^2 + n}{2} \simeq n^2$. Must make guarantees. It's easier.
+
+
+Analyzing growth rate of functions: look at worst case for large input sizes.
+
+\begin{defn}
+$f(n) = {\rm O}(g(n))$ "big-oh": $\forall n \geq n_0, f(n) \leq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \leq c$, for some constants $c$, $n_0$.
+\end{defn}
+
+\begin{ex}
+$10n^3 = {\rm O}(n^3)$
+\end{ex}
+
+\begin{ex}
+$20n^2 + 13n + 5 = {\rm O}(n^2)$
+\end{ex}
+
+\begin{ex}
+$10n^3 = {\rm O}(n^4) = {\rm O}(n^\infty)$
+\end{ex}
+
+Constant factors are important, but they don't affect the growth rate.
+
+${\rm O}$ is imperfect knowledge of a function's running time. ``Algorithm A is at least ${\rm O}(n^4)$'' doesn't actually mean anything.
+
+\begin{defn}
+$f(n) = \Omega (g(n))$ "big-omega": $\forall n \geq n_0, f(n) \geq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \geq c$, for some constants $c$, $n_0$.
+\end{defn}
+
+\begin{ex}
+$10n^3 = \Omega(1) = \Omega(n^3)$
+\end{ex}
+
+\begin{ex}
+$10n^2 + 10n + 2 = \Omega(n^2)$
+\end{ex}
+
+$\Omega$ is imperfect knowledge as well. Neither is the best case nor worst case.
+
+The optimized selection sort mentioned hereof is ${\rm O}(n^2)$, and is $\Omega(n^2)$ as well.
+
+\begin{defn}
+$f(n) = \Theta(g(n))$ "big-theta" means $$ and $$: $\forall n \geq n_0, f(n) \leq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \leq c$, for some constants $c$, $n_0$.
+\end{defn}
+
+$\Theta$ means perfect knowledge. Not every function has a $\Theta$.
