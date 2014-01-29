@@ -52,6 +52,82 @@ $n^3 + 2n^2 - 1 = {\rm O}(n^3) = \Omega(n^3) = \Theta(n^3)$
 $n^2 = {\rm O}(2^n) \neq \Omega(2^n) \neq \Theta(2^n)$
 \end{ex}
 
+\begin{prob}
+Suppose you have 2 sets $A$ and $B$, each with $n$ elements consisting of real numbers in no particular order. Let $C$ be the Cartesian Product of Sets $A$ and $B$. An algorithm which takes as input $A$, $B$, and $C$, and outputs the furthest pair of real numbers (from origin $(0, 0)$) from the set $C$.
+
+
+
+
+\begin{algorithm}[Algorithm]
+\SetAlgoLined
+\DontPrintSemicolon
+\SetKwData{A}{A}
+\SetKwData{B}{B}
+\SetKwData{C}{C}
+\SetKwData{Max}{max}
+\SetKwData{i}{i}
+\SetKwData{n}{n}
+\SetKwData{Dist}{dist}
+\SetKwFunction{FurthestPair}{FurthestPair}
+$\mathbf{Procedure}$ \FurthestPair{\A$[1...\n]$, \B$[1...\n]$, \C$[1...\n^2][1...2]$}\;
+\Max = 0\;
+\For{$i \leftarrow 1$ \KwTo $n^2$}{
+	\Dist = $\sqrt{\C[\i][1]^2 + \C[\i][2]^2}$\;
+	\uIf {\Dist $>$ \Max} {
+		\Max $\leftarrow$ \Dist \;
+		\FurthestPair $= (\C[\i]_1, \C[\i]_2)$\;
+	}
+}
+\Return \FurthestPair\;
+\end{algorithm}
+
+
+Runtime: ${\rm O}(n^2)$
+\end{prob}
+
+\begin{prob}
+
+$n^2$ slots, fill in with numbers 1 to $n^2$, $\Theta(n^2 !)$
+
+\end{prob}
+
+\begin{prob}
+
+Suppose you have functions $f$ and $g$ such that $f(n) = {\rm O}(g(n))$. Are these statements True or False?
+
+a) $f(n)^2 = {\rm O}(g(n)^2)$ True
+
+b) $2^{f(n)} = {\rm O}(2^{g(n)})$ False
+
+c) $x^2 + 4x + 5 = \Theta(x^2)$ False
+
+d) $n \log n = \Theta(\log(n!))$ True
+
+\end{prob}
+
+\begin{prob}
+
+Suppose $f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}{r(n)}$, prove or disprove (by counter example):
+
+a) $f(n) - g(n) = {\rm O}(s(n) - r(n))$ False
+
+e.g.: $f(n) = n^2 + 1$, $g(n) = n$, $s(n) = n^2$. $r(n) = n^2 - 1$
+
+b) If $f(n) = {\rm O}(g(n))$ then $f(n) + g(n) = {\rm O}(g(n))$ False
+
+e.g.: $f(n) = n + 2$, $g(n) = n^2$, $s(n) = n$, $r(n) = n^2$
+\end{prob}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

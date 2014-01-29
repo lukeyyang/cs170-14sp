@@ -11,25 +11,16 @@ sort and selection sort.
 \SetKwData{B}{B}
 \SetKwData{C}{C}
 \SetKwData{n}{n}
-%\SetKwData{High}{high}
-%\SetKwData{Mid}{mid}
-%\SetKwData{Low}{low}
 \SetKwFunction{MergeSort}{MergeSort}
 \SetKwFunction{Merge}{Merge}
-%\KwData{an array of ordered numbers \List given, initially $\Low = 1$ and $\High
-%= n$}
-%\SetKwInOut{Input}{Input}
-%\SetKwInOut{Output}{Output}
-%\Input{$\Target = a$ given}
-%\Output{the index of the member in \List that equals \Target, if found in \List}
 \SetAlgoLined
 \DontPrintSemicolon
 $\mathbf{Function}$ \MergeSort{\Array \A$[1:\n]$}\;
-\uIf{\n == 1}{
+\uIf{\n == $1$}{
         \Return \A
 }
-B = \MergeSort(\A$\left[1:\dfrac{\n}{2}\right]$)\;
-C = \MergeSort(\B$\left[\dfrac{\n}{2} + 1:\n\right]$)\;
+\B = \MergeSort(\A$\left[1:\dfrac{\n}{2}\right]$)\;
+\C = \MergeSort(\B$\left[\dfrac{\n}{2} + 1:\n\right]$)\;
 \Return \Merge(\B, \C)\;
 \end{algorithm}
 
