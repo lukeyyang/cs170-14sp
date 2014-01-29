@@ -1,1 +1,57 @@
 \section{Discussion 2, Tuesday, January 28}
+
+\begin{prob}
+
+For the following sequences,
+
+1) determine the next term in the sequence, and
+
+2) find a recursive formula for $S_n$ (the $n^{\rm th}$ term in the sequence)
+
+a) $S = \{1, -1, 2, -2, 3, -3, \cdots\}$
+
+$S_7 = 4$, $S_{n + 2} = (-1)^{n + 1} (|S_{n - 2}| + 1)$, $S_1 = 1$, $S_2 = -1$
+
+or $S_n = S_{n - 1} + (-1)^{n + 1} n$, $S_1 = 1$
+
+or $S_n = S_{n - 2} + (-1)^{n + 1}$, $S_1 = 1$, $S_2 = -1$
+
+b) $S = \{2, 3, 5, 9, 17, 33, \cdots\}$
+
+$S_7 = 65$, $S_{n + 1} = S_{n} + 2^{n - 1}$, $S_1 = 2$
+
+or $S_n = 2S_{n - 1} - 1$, $S_1 = 2$
+\end{prob}
+
+\begin{prob}
+Show that if $A$, $B$, $C$ are sets, then ${\overline {A \cap B \cap C}} = {\overline A} \cup {\overline B} \cup {\overline C}$
+
+De Morgan's Law.
+
+$x \notin A \land x \notin B \land x \notin C \Leftrightarrow x \in \overline A \land x \in \overline B \land x \in \overline C \Leftrightarrow x \in ({\overline A} \cup {\overline B} \cup {\overline C})$
+
+\end{prob}
+
+Algorithm, Sorting, Merge Sort, Selection Sort, Runtime, Asymptotic Runtime, Growth Rate
+
+Operations, ${\rm O}$: $f(n) = {\rm O}(g(n))$ where $|f(n)| \leq c|g(n)|$, $\Omega$: $f(n) = \Omega(g(n))$ where $|f(n)| \geq c|g(n)|$, $\Theta$: $f(n) = \Theta(n)$ where $f(n) = {\rm O}(g(n))$ and $f(n) = \Omega(g(n))$, Time Complexity: amount of time required for an algorithm to solve a problem, Brute Force Algorithm
+
+\begin{ex}
+$n^3 = \Omega(n^2)$
+\end{ex}
+
+\begin{ex}
+$n! = \Omega(1)$
+\end{ex}
+
+\begin{ex}
+$n^3 + 2n^2 - 1 = {\rm O}(n^3) = \Omega(n^3) = \Theta(n^3)$
+\end{ex}
+
+\begin{ex}
+$n^2 = {\rm O}(2^n) \neq \Omega(2^n) \neq \Theta(2^n)$
+\end{ex}
+
+
+
+
