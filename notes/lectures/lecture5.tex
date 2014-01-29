@@ -1,1 +1,235 @@
 \section{Lecture 5, Wednesday, January 29}
+
+\begin{prob}
+
+$f(n) = {\rm O}(h(n))$, $g(n) = {\rm O}(h(n))$, then $f(n) + g(n) = {\rm O} (h(n))$. True or false: $\sum_{i = 1}^n f(n) = {\rm O}(h(n))$.
+
+False. Set $f(n) = n$, $h(n) = n$, then $n = {\rm O}(n)$, but $\sum_{i = 1}^n n = n^2 \neq {\rm O}(n)$.
+
+\end{prob}
+
+\begin{remark}
+
+The summation of $f(n)$ for any constant number $c$ times $\sum_{i = 1}^c = {\rm O}(f(n))$, but in this case $n$ is a variable, which makes the statement false.
+
+\end{remark}
+
+\begin{prob}
+
+$f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}(r(n))$, True or false: $f(n) - g(n) = {\rm O}(s(n) - r(n))$.
+
+False. Set $f(n) = n^2$, $g(n) = 1$, $s(n) = n^2$, $r(n) = n^2 - 1$, then $n^2 = {\rm O}(n^2)$, and $1 = {\rm O}(n^2 - 1)$, but $n^2 - 1 \neq {\rm O}(1)$
+
+\end{prob}
+
+\begin{remark}
+
+$f(n) \leq c_0 s(n)$ for $n > n_0$ and $g(n) \leq c_1 r(n)$ for $n > n_1$ can't lead to $f(n) - g(n) \leq c [s(n) - r(n)]$.
+
+$f(n) - g(n) \leq c_0 s(n) - g(n) \geq c_0 s(n) - c_1 r(n)$. No way to yield a relation between the left side and the right side.
+
+\end{remark}
+
+\begin{prob}
+
+$f(n) = \Omega(s(n))$, $g(n) = \Omega(r(n))$, True or false: $f(n) - g(n) = \Omega(s(n) - r(n))$.
+
+False. Set $f(n) = n + 1$, $g(n) = n$, $s(n) = n$, $r(n) = 1$, then $n + 1 = \Omega(n)$, and $n = \Omega(1)$, but $1 \neq \Omega(n - 1)$
+
+\end{prob}
+
+\begin{prob}
+
+$f(n) = \Theta(s(n))$, $g(n) = \Theta(r(n))$, True or false: $f(n) - g(n) = \Omega(s(n) - r(n))$.
+
+False. Set $f(n) = n^2 + n$, $g(n) = n^2$, $s(n) = n^2 + 1$, $r(n) = n^2$, then $n^2 + n = \Theta(n^2 + 1)$, and $n^2 = \Theta(n^2)$, but $n \neq \Theta(1)$
+
+\end{prob}
+
+Propositional Logic: The building block of proper logic is the proposition.
+
+\begin{defn}
+
+Proposition: a statement of fact which is either true or false.
+
+\end{defn}
+
+\begin{ex}
+
+\textit{36 is a prime number} is a proposition.
+
+\textit{Spaghetti grows on trees} is a proposition.
+
+\textit{Go play Hearthstone} is not a proposition.
+
+\textit{I am bored by this class} is a proposition.
+
+\textit{The cake is a lie} is a proposition.
+
+$1 + 1 = 2$ is a proposition.
+
+$x + 1 = 2$ is not a proposition. It is a \textit{predicate}.
+
+\textit{This statement is false} is not a proposition. It is neither true nor false.
+
+\end{ex}
+
+\begin{ex}
+
+$p =$ \textit{there is life on Mars.}
+
+$q =$ \textit{there is life on Earth.}
+
+$\lnot p =$ \textit{no life on Mars.}
+
+$p \land q =$ \textit{life on both}
+
+$p \lor q$
+
+\begin{tabular}{cccccc}
+$p$ & $q$ & $\lnot p$ & $p \land q$ & $p \lor q$ & $p \oplus q$\\\hline
+  T &   T &         F &           T &          T &           F \\
+  T &   F &         F &           F &          T &           T \\
+  F &   T &         T &           F &          T &           T \\
+  F &   F &         T &           F &          F &           F
+\end{tabular}
+
+\end{ex}
+
+$\lnot$ is an unary operator. It only takes one argument.
+
+Theoretically there are 16 binary operators, including $\land$, $\lor$, $\oplus$.
+
+\begin{defn}
+
+$p \rightarrow q$: $\lnot p \lor q$, if $p$ then $q$, $p$ implies $q$, $p$ only if $q$, $q$ if $p$, $q$ is necessary for $p$, $p$ is sufficient for $q$   
+
+\end{defn}
+
+\begin{ex}
+
+\texttt{If Obama is president then }$2 + 2 = 4$ is true, true.
+
+\texttt{If Obama is president then }$2 + 2 = 4$ is true, false.
+
+\texttt{If Spaghetti grows on trees then }$2 + 2 = 4$ is false, true.
+
+\texttt{If Spaghetti grows on trees then }$2 + 2 = 5$ is false, false.
+
+\end{ex}
+
+\begin{defn}
+
+Implication: $p \rightarrow q$
+
+\end{defn}
+
+\begin{defn}
+
+Converse: $q \rightarrow p$
+
+\end{defn}
+
+\begin{defn}
+
+Contraposition: $\lnot q \rightarrow \lnot p$
+
+\end{defn}
+
+\begin{theorem}
+
+$p \rightarrow q$ and $\lnot q \rightarrow \lnot p$ are equivalent.
+
+\end{theorem}
+
+\begin{defn}
+
+$p \Leftrightarrow q$: $p$ implies $q$ and $q$ implies $p$, $p$ if and only if $q$, $p$ iff $q$, $\lnot(p \oplus q)$
+
+\end{defn}
+
+\begin{tabular}{ccccccc}
+$p$ & $q$ & $\lnot p$ & $\lnot q$ & $\lnot q \rightarrow \lnot p$ & $p \rightarrow q$ & $p \Leftrightarrow q$\\\hline
+  T &   T &         F &           F &          T &           T & T \\
+  T &   F &         F &           T &          F &           F & F \\
+  F &   T &         T &           F &          T &           T & F\\
+  F &   F &         T &           T &          T &           T & T
+\end{tabular}
+
+\begin{remark}
+
+In common English, people use \textit{if} a lot but actually they mean \textit{iff}.
+
+\end{remark}
+
+Order of operation: first negation, then everything else.
+
+\begin{defn}
+
+A set of compound propositions is consistent if it is possible to assign True or False values to all atomic propositions such that all compound propositions are true.
+
+\end{defn}
+
+\begin{ex}
+
+\textit{You will get an A in this class} or \textit{you will die trying},
+
+If \textit{you die trying}, \textit{you will (posthumously) get an A in this class},
+
+\textit{You will get an A in this class} and not \textit{die trying}
+
+are consistent.
+
+\end{ex}
+
+\begin{ex}
+
+\textit{You will get an A in this class} or \textit{you will die trying}.
+
+If \textit{you die trying}, \textit{you will (posthumously) get an A in this class}.
+
+\textit{You will get an A in this class}.
+
+are inconsistent.
+
+\end{ex}
+
+\begin{prob}
+
+Two doors, each has a sign. One prize behind one of the two doors. One sign is true, the other one is false. Sign 1: \textit{There is a prize behind this door and no prize behind other}. Sign 2: \textit{There is a prize behind one door and nothing behind the other}.
+
+The prize is behind door 2. When sign 1 is true, sign 2 must be true, but there's only one true sign, then sign 1 is false and sign 2 is true. Since sign 1 is false, the prize is behind door 2.
+
+$r = $ \textit{There is a prize behind door 1}.
+
+$s = $ \textit{There is a prize behind door 2}.
+
+$p = $ \textit{Sign 1 is true}.
+
+$q = $ \textit{Sign 2 is true}.
+
+Premise: $p \oplus q$
+
+Sign 1: $p \Leftrightarrow (r \land \lnot s)$
+
+Sign 2: $q \Leftrightarrow (r \oplus s)$
+
+
+
+\end{prob}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
