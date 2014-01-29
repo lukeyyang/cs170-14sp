@@ -107,11 +107,11 @@ d) $n \log n = \Theta(\log(n!))$ True
 
 \begin{prob}
 
-Suppose $f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}{r(n)}$, prove or disprove (by counter example):
+Suppose $f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}(r(n))$, prove or disprove (by counter example):
 
-a) $f(n) - g(n) = {\rm O}(s(n) - r(n))$ False
+a) $f(n) - g(n) = {\rm O}(f(n) - r(n))$ False
 
-e.g.: $f(n) = n^2 + 1$, $g(n) = n$, $s(n) = n^2$. $r(n) = n^2 - 1$
+e.g.: $f(n) = n^2 + 1$, $g(n) = n$, $s(n) = n^2$. $r(n) = n^2$
 
 b) If $f(n) = {\rm O}(g(n))$ then $f(n) + g(n) = {\rm O}(g(n))$ False
 
