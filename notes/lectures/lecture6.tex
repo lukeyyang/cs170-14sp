@@ -1,0 +1,146 @@
+\section{Lecture 6, Monday, February 3}
+
+\begin{ex}
+
+\textit{You cannot ride the roller coaster if you are under 4 feet tall unless you are older than 16 years.}
+
+$X$ unless $Y$: $(\lnot Y) \rightarrow X$
+
+If you are not older than 16, then (if you are under 4 ftm then you cannot rider), unless you are older than 16. $(\lnot r) \rightarrow \left [ q \rightarrow ( \lnot p ) \right ]$
+
+Truth table:
+
+\begin{tabular}{ccc|c|c|c|c}
+$p$ & $q$ & $r$ & $(\lnot r) \rightarrow \left [ q \rightarrow ( \lnot p ) \right ]$ & $(\lnot p) \rightarrow q$ & $q \rightarrow (\lnot p)$ & $(\lnot r) \rightarrow q$\\\hline
+ T  &  T  &  T  &  T  &  T  &  F  &  T\\
+ T  &  T  &  F  &  F  &  T  &  F  &  T\\
+ T  &  F  &  T  &  T  &  T  &  T  &  T\\
+ T  &  F  &  F  &  T  &  T  &  T  &  F\\
+ F  &  T  &  T  &  T  &  T  &  T  &  T\\
+ F  &  T  &  F  &  T  &  T  &  T  &  T\\
+ F  &  F  &  T  &  T  &  F  &  T  &  T\\
+ F  &  F  &  F  &  T  &  F  &  T  &  F
+\end{tabular}
+
+Some equivalent expressions:
+
+$(p \land q ) \rightarrow r$
+
+$(q \land \lnot r) \rightarrow \lnot p$
+
+$q \rightarrow (\lnot p \lor r)$
+
+\end{ex}
+
+Propositional logic are digital logic are one-on-one correspondent. Every propositional logic expression has its unique digital logic expression, vice versa. 
+
+First order logic: propositional logic + predicates.
+
+\begin{defn}
+
+A predicate is a sentence with one or more variables with becomes a proposition when specific values substituted for variables.
+
+\end{defn}
+
+We write predicate as a function.
+
+\begin{ex}
+
+$P(n) = n$ \textit{is an odd integer}.
+
+$P(5) = 5$ \textit{is an odd integer}.
+
+$P(6) = 6$ \textit{is an odd integer}.
+
+\end{ex}
+
+You may need to specify \textit{universe}.
+
+\begin{ex}
+
+$P(x) = x$ \textit{is larger than cake}. Universe: food items.
+
+$P(\text{pie})$: \textit{pie is larger than cake.}
+
+\end{ex}
+
+\begin{ex}
+
+$P(x) = x$ \textit{is mortal}. Universe: humans.
+
+\textit{All humans are mortal}: $\forall x P(x)$
+
+\textit{There is a human who is mortal}: $\exists x P(x)$
+
+\textit{No humans are mortal}: $\forall \lnot P(x)$
+
+\textit{There is a human who is not mortal}: $\exists x \lnot P(x)$
+
+\end{ex}
+
+\begin{ex}
+
+$E(x) = x$ \textit{is an elephant}
+
+$P(x) = x$ \textit{is pink}. Universe: everything.
+
+$\forall x [ E(x) \land  P(x) ]$: \textit{everything is pink elephant.}
+
+$\forall x [ E(x) \rightarrow P(x) ]$: \textit{all elephants are pink.}
+
+$\exists x [ E(x) \land P(x) ]$: \textit{There is a pink elephant.}
+
+$\exists x [ E(x) \rightarrow P(x) ]$: \textit{There is something which is either pink or not an elephant.}
+
+\end{ex}
+
+\begin{remark}
+
+$\exists x [ E(x) \rightarrow P(x) ] = \exists x [ \lnot E(x) \lor P(x) ]$
+
+\end{remark}
+
+\begin{ex}
+
+\textit{All humans are mortal} and \textit{There is a human who is not mortal} are logically opposite.
+
+\textit{There is a human who is mortal} and \textit{No humans are mortal} are logically opposite.
+
+\end{ex}
+
+$\lnot \forall x P(x) = \exists x \lnot P(x)$
+
+$\lnot \exists x P(x) = \forall x \lnot P(x)$
+
+\begin{remark}
+
+This is actually De Morgan's Law, since $\forall$ is the combination of a lot of $\land$, and $\exists$ is equivalent to $\lor$.
+
+\end{remark}
+
+\begin{ex}
+
+$\lnot \forall x [ E(x) \rightarrow P(x) ] = \exists x \lnot [ E(x) \rightarrow P(x) ]$
+
+\end{ex}
+
+\begin{ex}
+
+\textit{All that glitters is not gold} literally translates to $\forall x [ \text{Gl}(x) \rightarrow \lnot \text{Go}(x) ]$, but it actually means $\exists x [ \lnot \text{Go}(x) \land \text{Gl}(x) ]$. Ambiguity of English.
+
+\end{ex}
+
+\begin{ex}
+
+$L(x, y) = x\ \mathrm{loves}\ y$. Universe: people.
+
+\textit{Everybody loves somebody}: $\forall x \exists y L(x, y)$
+
+\textit{Somebody loves everybody}: $\exists x \forall y L(x, y)$
+
+\textit{There is somebody whom everybody loves}: $\exists y \forall x L(x, y)$
+
+\textit{Everybody is loved by somebody}: $\forall y \exists x L(x, y)$
+
+\end{ex}
+
