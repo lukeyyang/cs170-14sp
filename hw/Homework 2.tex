@@ -60,9 +60,23 @@ $f_d (n)$ and $f_b (n)$ satisfy $f_d (n) = \Theta (f_b(n))$.
 
 4.
 
+(a)
+
+True. $f(n) \leq cg(n)$ for some constant $c$, then $\log f(n) \leq \log cg(n) = \log c + \log g(n) \leq c^\prime \log g(n)$.
+
 (b)
 
 False. Set $f(n) = n^3$, $g(n) = n$, $s(n) = n^3$, $r(n) = n^2$. Then $n^3 = O (n^3)$ and $n = O(n^2)$, but apparently $\dfrac{f(n)}{g(n)} = n^2 \neq O\left(\dfrac{s(n)}{r(n)}\right) = O(n)$.
+
+(c)
+
+False. Set $f(n) = n^3 - n$ and $g(n) = n^3$, then $n^3 - n = \Theta(n^3)$ and $g(n) = n^3$ is a bijective function on $\mathbf{R} \rightarrow \mathbf{R}$, but apparently $f(n) = n^3 - n$ on $\mathbf{R} \rightarrow \mathbf{R}$ is not injective, thus isn't bijective either.
+
+(d)
+
+True. $f(n) \leq c_1 g(n) \leq c_1 g(n)^2 \Rightarrow \sqrt{f(n)} \leq c_2 g(n)$
+
+$h(n) \leq c_3 f(n) \Rightarrow \sqrt{h(n)} \leq c_4 \sqrt{f(n)} \leq c_5 g(n) \leq c_6 g(n)^2 \Rightarrow g(n)^2 = \Omega \left(\sqrt{h(n)}\right)$
 
 5.
 
