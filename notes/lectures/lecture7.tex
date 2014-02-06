@@ -1,0 +1,146 @@
+\section{Lecture 7, Wednesday, February 5}
+
+\begin{ex}
+
+$L(x, y) = x\ \mathrm{loves}\ y$. Universe: people.
+
+Not \textit{Everybody loves somebody} = \textit{Somebody loves Nobody}: $$\lnot \forall x \exists y L(x, y) = \exists x \lnot \exists y L(x, y) = \exists x \forall y \lnot L(x, y)$$
+
+Not \textit{Somebody loves everybody} = \textit{Everybody doesn't love somebody}: $$\lnot \exists x \forall y L(x, y) = \forall x \lnot \forall y L(x, y) = \forall x \exists y \lnot L(x, y)$$
+
+\end{ex}
+
+\begin{ex}
+
+$has(x, y)$, $Universe(x) = $\textit{dogs}, $Universe(y) = $\textit{tails}
+
+$\forall x \exists y {has} (x, y)$: \textit{Every dog has a tail}
+
+$\forall y \exists x {has} (x, y)$: \textit{Every tail is on a dog}
+
+$\exists y \forall x {has} (x, y)$: \textit{Every dog shares a tail}
+
+$\exists x \forall y {has} (x, y)$: \textit{There is a dog which has every tail}
+
+\end{ex}
+
+\begin{ex}
+
+$P(p, h) = p$ \textit{lives in} $h$
+
+$F(s, p) = s$ \textit{is friends with} $p$
+
+$Universe(p) = $\textit{people}, $Universe(h) = $\textit{residence halls}, $Universe(s) = $\textit{students in 170}
+
+\textit{There is a student in this class who is friends with at least one person from every residence hall}: $\exists s \forall h \exists p [F(s, p) \land P(p, h)]$
+
+\end{ex}
+
+\begin{remark}
+
+\textit{There exists a person $s$ in this class such that for every residence hall there exists a person $p$ who is friends with $s$.}
+
+\textit{For every residence hall you can find a person who is friends with someone in this class}$= \forall h \exists p \exists s [F(s, p) \land P(p, h)]$ is different. In this statement $s$ can change, while in the previous (correct) statement $s$ is fixed. 
+
+\textit{There exists a person} $s$ and \textit{there exists a person} $p$ \textit{such that for every residence hall $s$ is friends with $p$ and $p$ is from this residence hall} is a stronger statement. $\exists s \exists p \forall h [F(s, p) \land P(p, h)] \rightarrow \exists s \forall h \exists p [F(s, p) \land P(p, h)]$
+
+Generally, the farther right the $\forall$ quantifier, the stronger the statement.
+
+\end{remark}
+
+\begin{ex}
+
+$Q(x, y, z): x + y = z$, Universe $= \mathbf{Z}$
+
+$\forall x \forall y \exists z Q(x, y, z)$ True
+
+$\exists x \exists y \forall z Q(x, y, z)$ False
+
+$\exists z \forall x \forall y Q(x, y, z)$ False
+
+$\forall z \forall x \forall y Q(x, y, z)$ True
+
+\end{ex}
+
+\begin{remark}
+
+Swapping two adjacent $\forall$ or $\exists$ does not change the statement
+
+\end{remark}
+
+\begin{ex}
+
+$F(x, y) = x$ \textit{is friends with} $y$
+
+$\exists x \forall y \forall z [(F(x, y) \land F(x, z) \land (y \neq z)) \rightarrow \lnot F(y, z)]$: \textit{There is someone for whom all of his friends dislike each other.}
+
+\end{ex}
+
+\begin{defn}
+
+Argument: A sequence of statements starting with assumption (premises) and ending with a conclusion.
+
+\end{defn}
+
+\begin{defn}
+
+Valid: It is impossible for the premise to be true and the conclusion to be false.
+
+\end{defn}
+
+\begin{ex}
+
+If \textit{all roads lead to Rome} and \textit{the 405 does not lead to Rome}, then \textit{the 405 is not a road} is valid.
+
+\end{ex}
+
+\begin{ex}
+
+If \textit{all professors are absent-minded} and \textit{Aaron is absent-minded}, then \textit{Aaron is a professor} is invalid.
+
+\end{ex}
+
+\begin{remark}
+
+Any argument that has one negation in its premises is valid.
+
+\end{remark}
+
+Rules of Inference:
+
+Modus ponens: if $p$ and $p \rightarrow q$ then $q$
+
+Modus tollens: if $p \rightarrow q$ and $\lnot q$ then $\lnot p$
+
+Hypothetical syllogism: if $p \rightarrow q$ and $q \rightarrow r$ then $p \rightarrow r$
+
+Simplificaiton: if $p \land q$ then $p$
+
+Resolution: if $p \lor q$ and $\lnot p \lor r$ then $q \lor r$
+
+Use rules of inference to construct more complicated arguments.
+
+\begin{ex}
+
+If \textit{$\lnot$ Sunny $\land$ cold, swim $\rightarrow$ sunny, $\lnot$ swin $\rightarrow$ canoe, }and\textit{canoe $\rightarrow$ home by sunset, }then \textit{home by sunset.}
+
+1. \textit{$\lnot$ Sunny $\land$ cold}: premise
+
+2. \textit{swim $\rightarrow$ sunny}: premise
+
+3. \textit{$\lnot$ swin $\rightarrow$ canoe}: premise
+
+4. \textit{canoe $\rightarrow$ home by sunset}: premise
+
+5. \textit{$\lnot$ sunny}: simplification 1
+
+6. \textit{$\lnot$ swin}: modus tollens on 2, 5
+
+7. \textit{canoe}: modus ponens on 6, 3
+
+8. \textit{home by sunset}: modus ponens on 7, 4
+
+\end{ex}
+
+
+

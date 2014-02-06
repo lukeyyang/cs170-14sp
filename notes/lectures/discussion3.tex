@@ -1,0 +1,36 @@
+\section{Discussion 3, Wednesday, February 5}
+
+Homework problems
+
+\begin{prob}
+
+If $f(n) = O(g(n))$ then $\log f(n) = O(\log g(n))$. True.
+
+$f(n) \leq cg(n)$ for some constant $c$, then $\log f(n) \leq \log cg(n) = \log c + \log g(n) \leq c^\prime \log g(n)$
+
+\end{prob}
+
+\begin{prob}
+
+$f_a = \dfrac{n^3}{\log n} + n^2$, $f_b = 2n^3$, $f_c = \log^2 n$, $f_d = \sum_{i = 1}^{n} \sum_{j = 1}^{i} j$, $f_e = \log_3 n^2$, $f_f = 2^{\log n}$, $f_g = n^{\tfrac{8}{3}}$, $f_h = 1.01^n$
+
+Simplify:
+
+$$\sum_{i = 1}^{n} \sum_{j = 1}^{i} j = \sum_{i = 1}^{n} \dfrac{i(i + 1)}{2} = \sum_{i = 1}^{n} \left ( \dfrac{i^2}{2} + \dfrac{i}{2} \right ) \leq \sum_{i = 1}^{n} \dfrac{i^2}{2} = \dfrac{n(n+1)(2n + 1)}{12} = \Theta(n^3)$$
+
+$f_a \rightarrow \dfrac{n^3}{\log n} = o(n^3)= n^{\tfrac{8}{3}} \dfrac{n^{\tfrac{1}{3}}}{\log n} = \omega(n^{\tfrac{8}{3}})$, $f_b = 2n^3 = \Theta(n^3)$, $f_c = \log^2 n = \Theta(\log^2 n)$, $f_d = \sum_{i = 1}^{n} \sum_{j = 1}^{i} j = \Theta(n^3)$, $f_e = 2 \log_3 n = \Theta(\log n)$, $f_f = n = \Theta(n)$, $f_g = n^{\tfrac{8}{3}} = o \left ( \dfrac{n^3}{\log n} \right )$, $f_h = 1.01^n$
+
+$f_e < f_c < f_f < f_g < f_a < f_d = f_b < f_h$
+
+\end{prob}
+
+\begin{prob}
+
+If $f(n) = O(g(n))$ and $h(n) = O(f(n))$, then $g(n)^2 = \Omega\left(\sqrt{h(n)}\right)$ True.
+
+$f(n) \leq c_1 g(n) \leq c_1 g(n)^2 \Rightarrow \sqrt{f(n)} \leq c_2 g(n)$
+
+$h(n) \leq c_3 f(n) \Rightarrow \sqrt{h(n)} \leq c_4 \sqrt{f(n)} \leq c_5 g(n) \leq c_6 g(n)^2 \Rightarrow g(n)^2 = \Omega \left(\sqrt{h(n)}\right)$
+
+
+\end{prob}

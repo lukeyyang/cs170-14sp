@@ -2,23 +2,23 @@
 
 \begin{prob}
 
-$f(n) = {\rm O}(h(n))$, $g(n) = {\rm O}(h(n))$, then $f(n) + g(n) = {\rm O} (h(n))$. True or false: $\sum_{i = 1}^n f(n) = {\rm O}(h(n))$.
+$f(n) = O(h(n))$, $g(n) = O(h(n))$, then $f(n) + g(n) = O (h(n))$. True or false: $\sum_{i = 1}^n f(n) = O(h(n))$.
 
-False. Set $f(n) = n$, $h(n) = n$, then $n = {\rm O}(n)$, but $\sum_{i = 1}^n n = n^2 \neq {\rm O}(n)$.
+False. Set $f(n) = n$, $h(n) = n$, then $n = O(n)$, but $\sum_{i = 1}^n n = n^2 \neq O(n)$.
 
 \end{prob}
 
 \begin{remark}
 
-The summation of $f(n)$ for any constant number $c$ times $\sum_{i = 1}^c = {\rm O}(f(n))$, but in this case $n$ is a variable, which makes the statement false.
+The summation of $f(n)$ for any constant number $c$ times $\sum_{i = 1}^c = O(f(n))$, but in this case $n$ is a variable, which makes the statement false.
 
 \end{remark}
 
 \begin{prob}
 
-$f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}(r(n))$, True or false: $f(n) - g(n) = {\rm O}(s(n) - r(n))$.
+$f(n) = O(s(n))$, $g(n) = O(r(n))$, True or false: $f(n) - g(n) = O(s(n) - r(n))$.
 
-False. Set $f(n) = n^2$, $g(n) = 1$, $s(n) = n^2$, $r(n) = n^2 - 1$, then $n^2 = {\rm O}(n^2)$, and $1 = {\rm O}(n^2 - 1)$, but $n^2 - 1 \neq {\rm O}(1)$
+False. Set $f(n) = n^2$, $g(n) = 1$, $s(n) = n^2$, $r(n) = n^2 - 1$, then $n^2 = O(n^2)$, and $1 = O(n^2 - 1)$, but $n^2 - 1 \neq O(1)$
 
 \end{prob}
 

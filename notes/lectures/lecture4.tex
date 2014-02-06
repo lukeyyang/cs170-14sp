@@ -19,13 +19,13 @@ Merge sort $\Theta(n \log n)$
 Radix sort $\Theta(kn)$ where $k$ stands for the number of digits in the sorted numbers
 
 \begin{ex}
-Two functions $f(n) = \log_{10} n$ and $g(n) = \log_2 n = 2 \log n$. Apparently $f(n) = \mathrm{O}(g(n))$. True or false: $f(n) = \Theta(g(n))$.
+Two functions $f(n) = \log_{10} n$ and $g(n) = \log_2 n = 2 \log n$. Apparently $f(n) = O(g(n))$. True or false: $f(n) = \Theta(g(n))$.
 
 True, since $\log_{10} n = \dfrac{\log_2 n}{\log_2 10}$.
 \end{ex}
 
 \begin{ex}
-$\log^2 n = (\log_n)^2$. Apparently $\log_n = \mathrm{O}(\log^2 n)$. True or false: $\log_n = \Omega(\log^2 n)$.
+$\log^2 n = (\log_n)^2$. Apparently $\log_n = O(\log^2 n)$. True or false: $\log_n = \Omega(\log^2 n)$.
 
 False, since $\log^2 n = \log n \cdot \log n$.
 \end{ex}
@@ -35,20 +35,20 @@ It is true that $\log n = \Theta(\log n^2)$.
 \end{ex}
 
 \begin{ex}
-Although for any given number $n$, the value of $10 \log^{100} n$ is larger than the value of $\dfrac{1}{100} \sqrt{n}$, the rate of growth of $10 \log^{100} n$ is smaller than that of $\dfrac{1}{100} \sqrt{n}$. The former is polylogarithmic ($\log^c n$) and the latter is polynomial ($n^d$). $\log^c n = \mathrm{O} (n^d)$.
+Although for any given number $n$, the value of $10 \log^{100} n$ is larger than the value of $\dfrac{1}{100} \sqrt{n}$, the rate of growth of $10 \log^{100} n$ is smaller than that of $\dfrac{1}{100} \sqrt{n}$. The former is polylogarithmic ($\log^c n$) and the latter is polynomial ($n^d$). $\log^c n = O (n^d)$.
 \end{ex}
 
 \begin{ex}
-Although for any given number $n$, the value of $100 n^100$ is larger than the value of $1.01^{\tfrac{n}{100}}$, the rate of growth of $100 n^100$ is smaller than that of $1.01^{\tfrac{n}{100}}$. The former is polynomial ($n^d$) and the latter is exponential ($c^{\tfrac{n}{e}}$). $n^d = \mathrm{O} (c^{\tfrac{n}{e}})$, for $c > 1$.
+Although for any given number $n$, the value of $100 n^100$ is larger than the value of $1.01^{\tfrac{n}{100}}$, the rate of growth of $100 n^100$ is smaller than that of $1.01^{\tfrac{n}{100}}$. The former is polynomial ($n^d$) and the latter is exponential ($c^{\tfrac{n}{e}}$). $n^d = O (c^{\tfrac{n}{e}})$, for $c > 1$.
 \end{ex}
 
 Hierarchy of classifications of the rate of growth of a function:
 
 Constant $\Theta(1)$
 
-Polylogarithmic $\mathrm{O} (\log^c n)$
+Polylogarithmic $O(\log^c n)$
 
-Polynomial $\mathrm{O} (n^c)$
+Polynomial $O(n^c)$
 
 Exponential is not polynomial
 
@@ -71,7 +71,7 @@ Since $f_3 = n \cdot n^{0.0001}$ and $f_6 = n \cdot \log^{1.0001} n$, $ n^{0.000
 
 Since $2^{\sqrt{\log n}} < 2^{\log_2 n} = n$, $f_5 < f_6$ in terms of rate of growth.
 
-Comparing $f_2 = \log^2 n$ and $f_5 = 2^{\sqrt{\log n}}$: $\log f_2 = 2 \log(\log n)$ is polylogarithmic of $\log n$ and $\log f_5 = \sqrt{\log n}$ is polynomial of $\log n$, $\log^2 n = \mathrm{O} (2^{\sqrt{\log n}})$, $f_2 < f_5$ in terms of rate of growth.
+Comparing $f_2 = \log^2 n$ and $f_5 = 2^{\sqrt{\log n}}$: $\log f_2 = 2 \log(\log n)$ is polylogarithmic of $\log n$ and $\log f_5 = \sqrt{\log n}$ is polynomial of $\log n$, $\log^2 n = O (2^{\sqrt{\log n}})$, $f_2 < f_5$ in terms of rate of growth.
 
 Comparison of the rates of growth: $f_2 < f_5 < f_6 < f_3 < f_4 < f_1$
 \end{ex}
@@ -125,7 +125,7 @@ $f_1 = 100n$ is polynomial (linear)
 
 $f_2 = n^2$ is polynomial (quadratic)
 
-$f_3 = n! = \mathrm{O}(n^n)$ is exponential
+$f_3 = n! = O(n^n)$ is exponential
 
 $f_4 = 2^n$ is exponential
 
@@ -149,8 +149,8 @@ $n^2$ & $10^{-9}$ & $10^{-7}$ & $10^{-5}$ & circa $10^{2}$ \\\hline
 $2^n$ & $10^8$ & $4 \times 10^{11}$ years &  & 
 \end{tabular}
 
-$f(n) = \mathrm{O}(h(n))$, $g(n) = \mathrm{O}(h(n))$. It is intuitively true that $f(n) + g(n) = \mathrm{O}(h(n))$
+$f(n) = O(h(n))$, $g(n) = O(h(n))$. It is intuitively true that $f(n) + g(n) = O(h(n))$
 
 \begin{proof}
-$f(n) = \mathrm{O}(h(n)) \Leftrightarrow f(n) \leq c_0 h(n)$, $\forall n > n_0$,  $\exists c_0, n_0$, $g(n) = \mathrm{O}(h(n)) \Leftrightarrow g(n) \leq c_1 h(n)$, $\forall n > n_1$, $\exists c_1, n_1$, then $f(n) + g(n) \leq (c_0 + c_1) h(n)$, $\forall n > \max (n_0, n_1)$. Set $c = c_0 + c_1$ and $n_2 = \max (n_0, n_1)$, then $f(n) + g(n) \leq c h(n)$, $\forall n > n_2$.
+$f(n) = O(h(n)) \Leftrightarrow f(n) \leq c_0 h(n)$, $\forall n > n_0$,  $\exists c_0, n_0$, $g(n) = O(h(n)) \Leftrightarrow g(n) \leq c_1 h(n)$, $\forall n > n_1$, $\exists c_1, n_1$, then $f(n) + g(n) \leq (c_0 + c_1) h(n)$, $\forall n > \max (n_0, n_1)$. Set $c = c_0 + c_1$ and $n_2 = \max (n_0, n_1)$, then $f(n) + g(n) \leq c h(n)$, $\forall n > n_2$.
 \end{proof}

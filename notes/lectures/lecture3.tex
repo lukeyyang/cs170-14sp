@@ -60,24 +60,24 @@ In the average case, it'll be the same anyway (in this case it is true). $\dfrac
 Analyzing growth rate of functions: look at worst case for large input sizes.
 
 \begin{defn}
-$f(n) = {\rm O}(g(n))$ "big-oh": $\forall n \geq n_0, f(n) \leq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \leq c$, for some constants $c$, $n_0$.
+$f(n) = O(g(n))$ "big-oh": $\forall n \geq n_0, f(n) \leq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \leq c$, for some constants $c$, $n_0$.
 \end{defn}
 
 \begin{ex}
-$10n^3 = {\rm O}(n^3)$
+$10n^3 = O(n^3)$
 \end{ex}
 
 \begin{ex}
-$20n^2 + 13n + 5 = {\rm O}(n^2)$
+$20n^2 + 13n + 5 = O(n^2)$
 \end{ex}
 
 \begin{ex}
-$10n^3 = {\rm O}(n^4) = {\rm O}(n^\infty)$
+$10n^3 = O(n^4) = O(n^\infty)$
 \end{ex}
 
 Constant factors are important, but they don't affect the growth rate.
 
-${\rm O}$ is imperfect knowledge of a function's running time. ``Algorithm A is at least ${\rm O}(n^4)$'' doesn't actually mean anything.
+$O$ is imperfect knowledge of a function's running time. ``Algorithm A is at least $O(n^4)$'' doesn't actually mean anything.
 
 \begin{defn}
 $f(n) = \Omega (g(n))$ "big-omega": $\forall n \geq n_0, f(n) \geq cg(n) \leftrightarrow \dfrac{f(n)}{g(n)} \geq c$, for some constants $c$, $n_0$.
@@ -93,10 +93,10 @@ $10n^2 + 10n + 2 = \Omega(n^2)$
 
 $\Omega$ is imperfect knowledge as well. Neither is the best case nor worst case.
 
-The optimized selection sort mentioned hereof is ${\rm O}(n^2)$, and is $\Omega(n^2)$ as well.
+The optimized selection sort mentioned hereof is $O(n^2)$, and is $\Omega(n^2)$ as well.
 
 \begin{defn}
-$f(n) = \Theta(g(n))$ "big-theta" means $f(n) = {\rm O}(g(n))$ and $f(n) = \Omega(g(n))$.
+$f(n) = \Theta(g(n))$ "big-theta" means $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
 \end{defn}
 
 $\Theta$ means perfect knowledge. Not every function has a $\Theta$.

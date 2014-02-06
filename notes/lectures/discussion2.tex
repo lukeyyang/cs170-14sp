@@ -34,7 +34,7 @@ $x \notin A \land x \notin B \land x \notin C \Leftrightarrow x \in \overline A 
 
 Algorithm, Sorting, Merge Sort, Selection Sort, Runtime, Asymptotic Runtime, Growth Rate
 
-Operations, ${\rm O}$: $f(n) = {\rm O}(g(n))$ where $|f(n)| \leq c|g(n)|$, $\Omega$: $f(n) = \Omega(g(n))$ where $|f(n)| \geq c|g(n)|$, $\Theta$: $f(n) = \Theta(n)$ where $f(n) = {\rm O}(g(n))$ and $f(n) = \Omega(g(n))$, Time Complexity: amount of time required for an algorithm to solve a problem, Brute Force Algorithm
+Operations, $O$: $f(n) = O(g(n))$ where $|f(n)| \leq c|g(n)|$, $\Omega$: $f(n) = \Omega(g(n))$ where $|f(n)| \geq c|g(n)|$, $\Theta$: $f(n) = \Theta(n)$ where $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$, Time Complexity: amount of time required for an algorithm to solve a problem, Brute Force Algorithm
 
 \begin{ex}
 $n^3 = \Omega(n^2)$
@@ -45,11 +45,11 @@ $n! = \Omega(1)$
 \end{ex}
 
 \begin{ex}
-$n^3 + 2n^2 - 1 = {\rm O}(n^3) = \Omega(n^3) = \Theta(n^3)$
+$n^3 + 2n^2 - 1 = O(n^3) = \Omega(n^3) = \Theta(n^3)$
 \end{ex}
 
 \begin{ex}
-$n^2 = {\rm O}(2^n) \neq \Omega(2^n) \neq \Theta(2^n)$
+$n^2 = O(2^n) \neq \Omega(2^n) \neq \Theta(2^n)$
 \end{ex}
 
 \begin{prob}
@@ -82,7 +82,7 @@ $\mathbf{Procedure}$ \FurthestPair{\A$[1...\n]$, \B$[1...\n]$, \C$[1...\n^2][1..
 \end{algorithm}
 
 
-Runtime: ${\rm O}(n^2)$
+Runtime: $O(n^2)$
 \end{prob}
 
 \begin{prob}
@@ -93,11 +93,11 @@ $n^2$ slots, fill in with numbers 1 to $n^2$, $\Theta(n^2 !)$
 
 \begin{prob}
 
-Suppose you have functions $f$ and $g$ such that $f(n) = {\rm O}(g(n))$. Are these statements True or False?
+Suppose you have functions $f$ and $g$ such that $f(n) = O(g(n))$. Are these statements True or False?
 
-a) $f(n)^2 = {\rm O}(g(n)^2)$ True
+a) $f(n)^2 = O(g(n)^2)$ True
 
-b) $2^{f(n)} = {\rm O}(2^{g(n)})$ False
+b) $2^{f(n)} = O(2^{g(n)})$ False
 
 c) $x^2 + 4x + 5 = \Theta(x^2)$ False
 
@@ -107,13 +107,13 @@ d) $n \log n = \Theta(\log(n!))$ True
 
 \begin{prob}
 
-Suppose $f(n) = {\rm O}(s(n))$, $g(n) = {\rm O}(r(n))$, prove or disprove (by counter example):
+Suppose $f(n) = O(s(n))$, $g(n) = O(r(n))$, prove or disprove (by counter example):
 
-a) $f(n) - g(n) = {\rm O}(f(n) - r(n))$ False
+a) $f(n) - g(n) = O(f(n) - r(n))$ False
 
 e.g.: $f(n) = n^2 + 1$, $g(n) = n$, $s(n) = n^2$. $r(n) = n^2$
 
-b) If $f(n) = {\rm O}(g(n))$ then $f(n) + g(n) = {\rm O}(g(n))$ False
+b) If $f(n) = O(g(n))$ then $f(n) + g(n) = O(g(n))$ False
 
 e.g.: $f(n) = n + 2$, $g(n) = n^2$, $s(n) = n$, $r(n) = n^2$
 \end{prob}

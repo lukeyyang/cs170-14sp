@@ -34,6 +34,64 @@ Homework \#2\\
 
 2. 
 
+(a)
+
+In the best situation under the worst case, each question eliminates one half of all number under current consideration. This strategy takes $\left \lceil \log_2 1000 \right \rceil = 10$ steps, which is the least number of steps in the worst case.
+
+(b)
+
+As long as the initial pool of candidate integers is continuous, it does not matter what the boundary numbers exactly are, since one can always apply binary search to get best result in the worst case, which would take $\left \lceil \log_2 (4642 - 585) \right \rceil = 12$ questions.
+
+3
+
+$f_a (n) = \dfrac{n^3}{\log n}$ is polynomial,
+
+$f_b (n) = n^3$ is polynomial,
+
+$f_c (n) = \log^2 n$ is polylogarithmic,
+
+$f_d (n) = \sum_{i = 1}^n \sum_{j = 1}^i j = \dfrac{n(n + 1)}{2}$ is polynomial,
+
+$f_e (n) = \log_{1.5} n^2 = 2 \log_{1.5} n$ is polylogarthmic,
+
+$f_f (n) = 2^{\log n} = n$ is polynomial,
+
+$f_g (n) = n^{\tfrac{8}{3}}$ is polynomial,
+
+$f_h (n) = 1.001^n$ is exponential.
+
+For the polynomials, $f_b (n) > f_a (n) > f_g (n) > f_d (n) > f_f (n)$ asymptotically.
+
+For the polylogarithmics, $f_c (n) > f_e (n)$.
+
+In total, $f_h (n) > f_b (n) > f_a (n) > f_g (n) > f_d (n) > f_f (n) > f_c (n) > f_e (n)$.
+
+$f_a (n)$ and $f_b (n)$ satisfy $f_a (n) = \Theta (f_b(n))$.
+
+4.
+
+(b)
+
+False. Set $f(n) = n^3$, $g(n) = n$, $s(n) = n^3$, $r(n) = n^2$. Then $n^3 = O (n^3)$ and $n = O(n^2)$, but apparently $\dfrac{f(n)}{g(n)} = n^2 \neq O\left(\dfrac{s(n)}{r(n)}\right) = O(n)$.
+
+5.
+
+(a)
+
+$f(n) = \omega(g(n))$ means $g(n)$ is a lower bound of $f(n)$ but is not asymptotically tight.
+
+(b)
+
+$g(n) = \log n$ and $g(n) = n^{1.5}$
+
+(c)
+
+Yes, because when $\lim_{n \to \infty} \dfrac{h(n)}{f(n)} = 0$, $\lim_{n \to \infty} \dfrac{2h(n)}{f(n)} = 0$ as well.
+
+(d)
+
+No. For example, when $f(n) = n^2$ and $g(n) = n$, $n^2 = \omega(n)$; $\log f(n) = \log n^2 = 2 \log n$ and $\log g(n) = \log n$ but $2 \log n \neq \omega(\log n)$.
+
 
 
 \end{document}
