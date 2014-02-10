@@ -1,0 +1,223 @@
+\section{Lecture 8, Monday, February 10}
+
+\begin{defn}
+
+Propositional Equivalences $\equiv$
+
+\end{defn}
+
+\begin{ex}
+
+$(p \rightarrow q) \equiv (\lnot q \rightarrow \lnot p)$ contrapositive
+
+\end{ex}
+
+\begin{ex}
+
+$(p \rightarrow q) \not \equiv (q \rightarrow p)$ converse
+
+\end{ex}
+
+Tautology: $p \lor \lnot p \equiv$ True
+
+Contradiction: $p \land \lnot p \equiv$ False
+
+Implication: $(p \rightarrow q) \equiv (\lnot p \lor q)$
+
+De Morgan's: $\lnot (p \land q) \equiv \lnot p \lor \lnot q$, $\lnot (p \lor q) \equiv \lnot p \land \lnot q$
+
+More on Tables 6, 7, 8 on pages 27 - 28
+
+\begin{prob}
+
+If \textit{you send me an email}$(e)$, then \textit{I will write my code}$(c)$. If \textit{you don't send me an email}, then \textit{I will go to bed}$(b)$. If \textit{I go to bed}, then \textit{I will wake up refreshed}$(r)$.
+
+Prove: if \textit{I don't write my code}, then \textit{I will wake up refreshed}($\lnot c \rightarrow r$).
+
+\end{prob}
+
+\begin{proof}
+
+1: $e \rightarrow c$ premise
+
+2: $\lnot e \rightarrow b$ premise
+
+3: $b \rightarrow r$ premise
+
+4: $\lnot c \rightarrow \lnot e$ contrapositive of 1
+
+5: $\lnot e \rightarrow b$ hypothetical syllogism on 2, 4
+
+6: $\lnot c \rightarrow r$ hypothetical syllogism on 5, 3
+
+\end{proof}
+
+
+\begin{prob}
+
+Prove: $\lnot [p \lor (\lnot p \land q)] \equiv (\lnot p \land q)$
+
+\end{prob}
+
+\begin{proof}
+
+1: $\lnot [p \lor (\lnot p \land q)]$ premise
+
+2: $\lnot p \land \lnot (\lnot p \land q)$ De Morgan's on 1
+
+3: $\lnot p \land (\lnot \lnot p \lor \lnot q)$ De Morgan's on 2
+
+4: $\lnot p \land (p \lor \lnot q)$ double negation on 3
+
+5: $(\lnot p \land p) \lor (\lnot p \land \lnot q)$ distributive on 4
+
+6. $\text{False} \lor (\lnot p \land \lnot q)$ contradiction on 5
+
+7. $(\lnot p \land \lnot q)$ identity on 6
+
+\end{proof}
+
+Distributive: $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$, $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+
+Identity: $p \lor$ False $\equiv p$, $p \land$ True $\equiv p$
+
+Domination: $p \land$ False $\equiv F$, $p \lor$ True $\equiv T$
+
+Implication: $p \rightarrow q \equiv \lnot p \lor q$
+
+Double negation: $\lnot \lnot p \equiv p$
+
+Tautology: $p \lnot \not p \equiv$ True
+
+Associative: $(p \lor q) \lor r \equiv p \lor (q \lor r)$, $(p \land q) \land r \equiv p \land (q \land r)$
+
+\begin{prob}
+
+Prove that $\lnot p \rightarrow (p \rightarrow q) \equiv$ True is tautology.
+
+\end{prob}
+
+\begin{proof}
+
+1. $\lnot p \rightarrow (p \rightarrow q)$ premise
+
+2. $\lnot \lnot p \lor (p \rightarrow q)$ implication on 1
+
+3. $p \lor (p \rightarrow q)$ double negation on 2
+
+4. $p \lor (\lnot p \lor q)$ implication on 3
+
+5. $(p \lor \lnot p) \lor q$ associative on 4
+
+6. True $\lor q$ tautology on 5
+
+7. True domination on 6
+
+\end{proof}
+
+\begin{defn}
+
+Universal instantiation: If $\forall x P(x)$, then $P(c)$ for any $c$
+
+\end{defn}
+
+\begin{defn}
+
+Existential generalization: If $P(c)$, then $\exists x P(x)$
+
+\end{defn}
+
+The two above are easy to use. The following two are dangerous.
+
+\begin{defn}
+
+Universal generalization: If $P(c)$ for any $c$, then $\forall x P(x)$
+
+\end{defn}
+
+\begin{defn}
+
+Existential instantiation: If $\exists x P(x)$, then $P(c)$, specific $c$. \textit{There's no restriction on $c$.}
+
+\begin{ex}
+
+Prove that $\forall x (P(x) \land Q(x)) \equiv (\forall x P(x)) \land (\forall x Q(x))$
+
+\end{ex}
+
+\begin{proof}
+
+1. $P(c) \land Q(c)$ instantiation on the left side
+
+2. $(\forall x P(x)) \land Q(c)$ generalization on 1
+
+3. $(\forall x P(x)) \land (\forall x Q(x))$ generalization on 2
+
+\end{proof}
+
+\begin{prob}
+
+Prove that $\exists x (P(x) \lor Q(x)) \equiv (\exists x P(x)) \lor (\exists x Q(x))$
+
+\end{prob}
+
+\begin{proof}
+
+1. $P(c) \lor Q(c)$ instantiation on the left side
+
+2. $(\exists x P(x)) \lor Q(c)$
+
+3. $(\exists x P(x)) \lor (\exists x Q(x))$
+
+4. $P(c) \lor (\exists x Q(x))$
+
+5. $P(c) \lor Q(d)$
+
+6. If $P(c)$ is true, then $\exists x (P(x) \lor Q(x))$
+
+7. If $Q(d)$ is true, then $\exists x (P(x) \lor Q(x))$
+
+\end{proof}
+
+\begin{prob}
+
+Prove that $\exists x (P(x) \land Q(x)) \not \equiv (\exists x P(x)) \land (\exists x Q(x))$
+
+\end{prob}
+
+\begin{proof}
+
+1. $P(c) \land Q(c)$
+
+2. $(\exists x P(x)) \land Q(c)$
+
+3. $(\exists x P(x)) \land (\exists x Q(x))$
+
+4. $P(c) \land (\exists x Q(x))$
+
+5. $P(c) \land Q(d) \not \equiv \exists x (P(x) \land Q(x))$
+
+\end{proof}
+
+Common fallacies:
+
+Affirming the conclusion: $p \rightarrow q$ and $q$, therefore $p$
+
+Denying the hypothesis: $p \rightarrow q$ and $\lnot p$, therefore $\lnot q$
+
+Circular reasoning/Begging the question: trying to prove the conclusion $q$ while inside the proof $q$ is assumed to be true.
+
+General proof tips:
+
+1. Convince yourself by running through examples;
+
+2. Keep deriving stuff, do not give up;
+
+3. Check your proof very carefully.
+
+
+
+
+
+\end{defn}
+
