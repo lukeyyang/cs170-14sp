@@ -1,0 +1,197 @@
+\section{Lecture 9, Wednesday, February 12}
+
+\subsection{Direct proof}
+
+\begin{ex}
+
+Prove: if $n$ is odd, then $n^2$ is odd.
+
+\end{ex}
+
+\begin{defn}
+
+Integer $n$ is odd if $n = 2k + 1$ for some integer $k$.
+
+\end{defn}
+
+\begin{proof}
+
+$n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$ is odd.
+
+\end{proof}
+
+\begin{ex}
+
+Prove: if $r$ and $s$ are rational numbers, then $r + s$ is a rational number.
+
+\end{ex}
+
+\begin{defn}
+
+Real number $r$ is a rational number if $r = \dfrac{p}{q}$ for some integers $p$ and $q$.
+
+\end{defn}
+
+\begin{proof}
+
+$r = \dfrac{p}{q}$, $s = \dfrac{r}{s}$, $r + s = \dfrac{ps + qr}{qs}$ is a rational number.
+
+\end{proof}
+
+\subsection{Proof by contraposition}
+
+\begin{ex}
+
+Prove: given an integer $n$, if $3n + 2$ is odd, then $n$ is odd.
+
+\end{ex}
+
+\begin{proof}
+
+Contraposition: if $n$ is even, then $3n + 2$ is even.
+
+If $n = 2k$ for some integer $k$, then $3n + 2 = 6k + 2 = 2(3k + 1)$ is even.
+
+\end{proof}
+
+\begin{ex}
+
+Prove: given 2 positive integers $a$ and $b$, if $n = ab$, then $a \leq \sqrt{n}$ or $b \leq \sqrt{n}$.
+
+\end{ex}
+
+\begin{proof}
+
+Contraposition: if $a > \sqrt{n}$ and $b > \sqrt{n}$ (by De Morgan's Law), then $n \neq ab$.
+
+$n = \sqrt{n} \sqrt{n} < ab$
+
+\end{proof}
+
+\begin{ex}
+
+Prove: given an integer $n$, if $n^2$ is odd, then $n$ is odd.
+
+\end{ex}
+
+\begin{proof}
+
+Contraposition: if $n$ is even, then $n^2$ is even.
+
+If $n = 2k$ for some integer $k$, then $n^2 = 4k^2 = 2(2k^2)$ is even.
+
+\end{proof}
+
+\subsection{Proof by contradiction}
+
+\begin{ex}
+
+Prove: given an integer $n$, if $3n + 2$ is odd, then $n$ is odd.
+
+\end{ex}
+
+\begin{proof}
+
+Assume $3n + 2$ is odd and $n$ is even.
+
+$n = 2k$, $3n + 2$ = $6k + 2 = 2(3k + 1)$ is even. Contradiction.
+
+\end{proof}
+
+\begin{remark}
+
+Prove by contradiction can handle statements other than if-then statements, and thus is a stronger method of proof.
+
+\end{remark}
+
+\begin{ex}
+
+Prove: $\sqrt{2}$ is irrational.
+
+\end{ex}
+
+\begin{proof}
+
+Assume $\sqrt{2} = \dfrac{p}{q}$ for some integers $p$ and $q$ such that $\dfrac{p}{q}$ is a reduced fraction.
+
+$p^2 = 2q^2$ is even, then $p$ is even.
+
+$p = 2k$ for some integer $k$, then $p^2 = 4k^2 = 2q^2 \Rightarrow q^2 = 2k^2$ is even, then $q$ is even.
+
+$p$ and $q$ are both divisible by 2, and $\dfrac{p}{q}$ is not in a reduced form. Contradiction.
+
+\end{proof}
+
+\begin{remark}
+
+Prove by contradiction is distinct from disprove by counter-example, where the former handles $\forall$ style statements and the latter handles $\exists$ style statements.
+
+\end{remark}
+
+\subsection{Proof by construction}
+
+\begin{ex}
+
+Prove: an $8 \times 8$ checkerboard can be tiled by $1 \times 2$ dominoes
+
+\end{ex}
+
+\begin{proof}
+
+Give an example!
+
+\end{proof} 
+
+\begin{ex}
+
+A pile of 15 stones. P1 removes 1, 2, or 3 stones. P2 does the same. Alternate. Whoever takes the last stone wins. Prove that P1 can always win with an optimal strategy.
+
+\end{ex}
+
+\begin{proof}
+
+If there's 1 or 2 or 3 stones, P1 always wins. If there're 4 stones, P2 always wins.
+
+If there're 5 or 6 or 7 stones, P1 always wins. If there're 8 stones, P2 always wins.
+
+If there're 9 or 10 or 11 stones, P1 always wins. If there're 12 stones, P2 always wins.
+
+If there're 13 or 14 or 15 stones, P1 always wins.
+
+The optimal strategy for P1 is to remove whatever number of stones so that the remaining number of stones is divisible by 4.
+
+\end{proof}
+
+\subsection{Disprove by contradiction}
+
+\begin{ex}
+
+Disprove: an $8 \times 8$ checkerboard with the upper-right corner block removed can be tiled by $1 \times 2$ dominoes
+
+\end{ex}
+
+\begin{proof}
+
+The board now has only 63 blocks, which is an odd number and indivisible by 2.
+
+\end{proof} 
+
+\begin{ex}
+
+Disprove: an $8 \times 8$ checkerboard with the upper-right corner block and the lower-left corner block removed can be tiled by $1 \times 2$ dominoes
+
+\end{ex}
+
+\begin{proof}
+
+Color the $8 \times 8$ checkerboard with black and white blocks next to each other, then the two removed blocks are in the same color, and the two colors don't have the same number of blocks on the board. As every domino must cover one black and one white, it is impossible to tile the board with two diagonal corner blocks removed.
+
+\end{proof}
+
+\subsection{Open problems}
+
+\begin{ex}
+
+Take a positive integer $x$, if $x$ is even, take $\dfrac{x}{2}$, else if $x$ is odd, take $3x + 1$. Loop, until 1 is produced. Prove that this algorithm leads to a dead loop.
+
+\end{ex}

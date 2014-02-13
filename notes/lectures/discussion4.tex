@@ -1,0 +1,87 @@
+\section{Discussion 4, Tuesday, February 11}
+
+Concepts: proposition, variables, negation of proposition, logical operators: negation, conjunction, disjunction, exclusive or, compound definition, conditional statement, premise, conclusion, converse, contraposition, inverse, logic gates, tautology, De Morgan's Laws, predicate, quantifiers (universal, existential)
+
+\begin{ex}
+
+\textit{If I ask a question and you don't have an answer, you're fired} is a proposition.
+
+\end{ex}
+
+\begin{ex}
+
+\textit{If} $p \rightarrow q$, \textit{then} $q \rightarrow p$ is false.
+
+\end{ex}
+
+\begin{ex}
+
+\textit{``If I do not have CS 170 discussion then it is not Tuesday'' is the converse of ``If it is Thursday and I do not have CS 170 discussion''} is false.
+
+\end{ex}
+
+\begin{ex}
+
+$p \rightarrow q$ \textit{is logically equivalent to} $\lnot q \rightarrow \lnot p$ is true.
+
+\end{ex}
+
+\begin{ex}
+
+\textit{If I remember my logarithmic function theory, then} $2^{\log n} = \log n^2$ is true if its premise is false, otherwise false.
+
+\end{ex}
+
+\begin{prob}
+
+Let $p$, $q$, $r$ be
+
+$p$: \textit{You get an A in this class}
+
+$q$: \textit{You attend every discussion section}
+
+$r$: \textit{You love this class}
+
+\textit{You do not love this class but you get an A in this class}: $\lnot r \land p$
+
+If \textit{you love this class, you will attend every discussion section}: $r \rightarrow q$
+
+If \textit{you attend every discussion section, you will get an A in this class}: $q \rightarrow p$
+
+\end{prob}
+
+\begin{prob}
+
+Let $I(x)$ be the predicate \textit{$x$ is interesting}. Let $L(x, y)$ be the predicate \textit{$x$ is less than $y$}. Let universe be the set of all integers.
+
+a) Translate following into first order logic. b) Negate the logical expression. c) Translate the negated expressions into English.
+
+\textit{Zero is less than all integers}: $\forall x L(0, x)$. Negation: $\exists x \lnot L(0, x)$: \textit{There exists an integer that zero is not less than.}
+
+\textit{If any integer is interesting, then zero is interesting}: $\exists x I(x) \rightarrow I(0)$. Negation: $\forall x I(x) \land \lnot I(0)$: \textit{There is an interesting integer but zero is not interesting.}
+
+\textit{There is no integer such that all integers are less than it}: $\lnot \exists x \forall y \lnot L(y, x) = \forall x \exists y \lnot L(y, x)$. Negation: $\exists x \forall y L(x, y)$: \textit{There exists an integer such that all integers are less than it.}
+
+\end{prob}
+
+\begin{prob}
+
+Using rules of inference and propositional equivalences, prove the following arguments are valid:
+
+a) Premises: $a \rightarrow b \rightarrow a$, conclusion: $a$;
+
+b) Premises: $a \rightarrow b$, $\lnot c \rightarrow \lnot b$, $a \lor d$, conclusion: $c \lor d$.
+
+\end{prob}
+
+%a. \begin{proof}
+
+%1. $(a \rightarrow b) \rightarrow a$ premise
+
+%2. 
+
+%\end{proof}
+
+
+fire flower fjord
+
