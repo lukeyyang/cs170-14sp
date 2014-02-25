@@ -1,0 +1,101 @@
+\section{Lecture 10, Wednesday, February 19}
+
+\subsection{Proof by induction}
+
+\begin{ex}
+
+Prove: $P(n)$ is true, $\forall n \in \mathbf{Z}^+$, $P(n): \sum_{i = 1}^n i = \dfrac{n(n + 1)}{2}$.
+
+\end{ex}
+
+\begin{proof}
+
+For $n = 1$, $\sum_{i = 1}^1 i = 1$, $\dfrac{1(1 + 1)}{2} = 1$, the statement is true.
+
+Assume true for $n = k$, $P(k)$ is true, show $P(k + 1)$ is true.
+
+Show: $\sum_{i = 1}^{k + 1} i = \dfrac{(k + 1)(k + 2)}{2}$
+
+$\sum_{i = 1}^{k + 1} i = (k + 1) + \sum_{i = 1}^k i = \dfrac{2(k + 1)}{2} + \dfrac{k(k + 1)}{2} = \dfrac{(k + 1)(k + 2)}{2}$
+
+\end{proof}
+
+\begin{defn}
+
+Proof by Induction: Prove the predicate is true for smallest valid value (base case), assume the predicate is true for $n = k$ (inductive hypothesis), prove $P(k + 1)$ is true.
+
+\end{defn}
+
+\begin{ex}
+
+Prove: $\forall n \in \mathbf{Z}^0$, $\sum_{i = 0}^n 2^i = 2^{n + 1} - 1$.
+
+\end{ex}
+
+\begin{proof}
+
+For $n = 0$, $\sum_{i = 0}^0 2^i = 2^0 = 1$, $2^{0 + 1} - 1 = 2 - 1 = 1$, the statement is true.
+
+Assume that $\sum_{i = 0}^k 2^i = 2^{k + 1} - 1$, show $\sum_{i = 0}^{k + 1} 2^i = 2^{k + 2} - 1$.
+
+$\sum_{i = 0}^{k + 1} 2^i = 2^{k + 1} + \sum_{i = 0}^k 2^i = 2^{k + 1} + 2^{k + 1} - 1 = 2^{k + 2} - 1$
+
+\end{proof}
+
+\begin{ex}
+
+What is the sum of the first $n$ odd integers, $\sum_{i = 1}^n (2i - 1)$?
+
+Claim $\sum_{i = 1}^n (2i - 1) = n^2$ by running some examples.
+
+\end{ex}
+
+\begin{proof}
+
+For $n = 1$, $1 = 1^2$
+
+Assume true for $n = k$, show true for $n = k + 1$, $\sum_{i = 1}^{k + 1}(2i - 1) = (k + 1)^2$.
+
+$\sum_{i = 1}^{k + 1} = \sum_{i = 1}^k (2i - 1) + 2(k + 1) - 1 = k^2 + 2k + 1 = (k + 1)^2$
+
+\end{proof}
+
+\begin{ex}
+
+Pie Fight! There's odd number of people. Everyone get one pie. Everyone throws their pie at nearest person. Every pair is at a distinct distance. Prove: Someone is not hit by a pie.
+
+\end{ex}
+
+\begin{proof}
+
+Prove true for all odd numbers $n \geq 3$.
+
+For base case $n = 3$, the closest pair will throw pies at each other, and the other person will throw at one of the pair, and this other person will not be hit by a pie.
+
+Assume true for $n = 2k + 1$, show true for $n = 2k + 3$
+
+For $n = 2k + 3 = 2k + 1 + 2$: choose closest pair (A, B), then A hits B, B hits A. 
+
+For the $(2k + 1)$ remainders:
+
+Case 1: someone throws a pie at A or B. A or B are hit by 2 pies, and there's only enough pies for each to be hit twice, then some one is not hit.
+
+Case 2: no one throws a pie at A or B. By induction hypotheses, someone is not hit by a pie.
+
+\end{proof}
+
+\begin{prob}
+
+For any $2^n \times 2^n$ chessboard, with one square removed, it can be tiled by 3-square L-shape pieces. Prove this is true $\forall n \in \mathbf{Z}^0$
+
+\end{prob}
+
+\begin{proof}
+
+The base case, where $n = 0$, is apparently true.
+
+Assume true for $2^n \times 2^n$, then for a board of $2^{n + 1} \times 2^{n + 1}$, we can split into four identical quadrants of $2^n \times 2^n$ and take out one tile. To prove this graph can be tiled. For one quadrant, take an arbitrary one; for the other three, each to take one so that the missing part forms a L-shape and can be tiled with one extra tile. By induction hypothesis, this formation can be tiled.
+
+\end{proof}
+
+

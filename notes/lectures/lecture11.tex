@@ -1,0 +1,106 @@
+\section{Lecture 11, Monday, February 24}
+
+\begin{ex}
+
+Claim: All horses are the same color.
+
+\end{ex}
+
+\begin{proof}
+
+Base case: $n = 1$
+
+Another base case: $n = 2$ THIS IS REALLY IMPORTANT
+
+I.H.: Any set of $k$ horses are the same color.
+
+Consider $k + 1$ horses. First $k$ horses are the same color. Last $k$ horses are the same color, and they overlap when $n > 2$, thus all $k + 1$ horses are the same color.
+
+\end{proof}
+
+\begin{ex}
+
+Prove that any integer $n \geq 2$ can be written as a product of primes (the prime factorization).
+
+\end{ex}
+
+\begin{proof}
+
+Base case: $n = 2$
+
+I.H.: Assume $k$ has a prime factorization.
+
+Show: $k + 1$ has a prime factorization. 
+
+Case 1: $k + 1$ is prime. Done.
+
+Case 2: We can write $k + 1 = ab$, where $b$ is a prime number, and we need to show that $a$ has a prime factorization. Note that both $a$ and $b$ are both smaller than $k$, thus they are not guaranteed to have prime factorization BY THE I.H.
+
+New I.H. (stronger): Assume all integers $n \in [2, k]$ have prime factorizations. 
+
+Same induction proof as shown above, except that this time $k + 1 = ab$ and $a$ and $b$ are covered by the new I.H. and both have prime factorizations. Therefore $k + 1$ has a prime factorization.
+
+\end{proof}
+
+\begin{remark}
+
+Strong Induction: Assume that all previous dominoes fell over. Weak Induction: Assume previous domino fell over.
+
+\end{remark}
+
+\begin{prob}
+
+2 piles of matches of equal size. 2 players. P1 goes first, and they alternate. On your turn, take at least 1 match from a single pile. Winner takes the last match.
+
+Prove that P2 can always win.
+
+\end{prob}
+
+\begin{proof}
+
+Base case: 1 match per pile. P2 is forced to win.
+
+I.H.: if there are between $[2, k]$ matches in each pile, P2 can always win.
+
+Show: when each pile has $k + 1$ matches, P2 can always win. Since the number of matches that P1 can take from one pile is at least 1, the number of matches remaining in this pile is at most $k$. When P2 does the same thing to the other pile, both piles will again have the same number of matches, which is at most $k$ and covered by the I.H. Therefore P2 can always win by taking the sam e number of matches as P1 takes from one pile from the other pile.
+
+\end{proof} 
+
+\begin{ex}
+
+Prove: any integer $n \geq 12$ can be written as $4a + 5b$ where $a, b \in \mathbf{N}$.
+
+\end{ex}
+
+\begin{proof}
+
+Base case: $n = 12 = 3 \times 4$, $n = 13 = 2 \times 4 + 5$, $n = 14 = 4 + 2 \times 5$, $n = 15 = 3 \times 5$.
+
+I.H.: any $n \in [12, k]$ can be written as $4a + 5b$ where $a$ and $b$ are natural numbers.
+
+Show: $k + 1 = 4c + 5d$, where $c$ and $d$ are natural numbers. Since $k + 1 = 4 + k - 3$, where $k - 3 \in [12, k]$, $k - 3$ can be written as $4a + 5b$, so $k + 1 = 4(a + 1) + 5b$.
+
+\end{proof}
+
+\begin{prob}
+
+You have an $n$-square chocolate bar arranged in a rectangular grid. Break until $1 \times 1$ pieces. Prove that $n - 1$ breaks are required.
+
+\end{prob}
+
+\begin{proof}
+
+Base case: $n = 1$: 0 breaks. $n = 1$: 1 break.
+
+I.H.: for $n \in [1, k]$ squares, it requires $n - 1$ breaks. 
+
+Show that $k + 1$ squares require $k$ breaks. 
+
+Take one break for the $k + 1$ piece and break it down to $a$ and $k + 1 - a$, where $a \in [1, k]$, and $k + 1 - a \in [1, k]$, then $a$ piece requires $a - 1$ breaks and $k + 1 - a$ piece requires $k - a$ pieces. In total: $1 + a - 1 + k - a = k$ breaks.
+
+\end{proof}
+
+
+
+
+

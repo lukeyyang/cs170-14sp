@@ -1,0 +1,217 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = XeLaTeX
+\documentclass[UTF8,12pt,letterpaper,oneside]{amsart}
+\usepackage[letterpaper]{geometry}
+\geometry{top=1.0in, bottom=1.0in, left=1.0in, right=1.0in}
+\usepackage{setspace}
+%\doublespacing
+\usepackage{hyperref}
+%\usepackage{times}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{lineno} 
+\usepackage{fancyhdr}
+\usepackage{hanging}
+\pagestyle{fancy}
+\rhead{\textsc{Yang} \thepage} 
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\setlength\headsep{0.333in}
+\usepackage{tikz}
+%\usepackage{shapes,backgrounds}
+
+\newenvironment{workscited}{\newpage \begin{center} Works Cited \end{center}}{\newpage }
+
+\begin{document}
+
+\noindent Luke \textsc{Yang}\\
+\texttt{1004-3383-46}\\
+CSCI 170 MW afternoon lecture\\
+\textsc{Professor} Aaron \textsc{Cote}\\
+Due Thursday, February 20, 2014\\
+Homework \#3\\
+
+2. 
+
+(a) $c_1 = a_1 \oplus b_1$
+
+(b) 
+
+\begin{tabular}{ccc}
+$a_1$ & $b_1$ & $c_1$ \\\hline
+T   & T   & F\\\hline
+T   & F   & T\\\hline
+F   & T   & T\\\hline
+F   & F   & F\\\hline
+\end{tabular}
+
+(c) $c_2 = (a_1 \land b_1) \oplus (a_2 \oplus b_2)$
+
+(d) $c_3 = (a_2 \land b_2) \lor (\lnot a_2 \land a_1 \land b_2 \land b_1) \lor (a_2 \land a_1 \land \lnot b_2 \land b_1)$
+
+3.
+
+(a)
+
+(i) $I(\mathrm{You, CSCI\ 170})$
+
+(ii) $\lnot(\mathrm{You,\ CSCI\ 170})$
+
+(iii) You don't think that CSCI 170 is interesting.
+
+(b)
+
+(i) $\exists x \forall y I(x, y)$
+
+(ii) $\lnot \exists x \forall y I(x, y) = \forall x \exists \lnot y I(x, y)$
+
+(iii) For every student there is a class such that the student doesn't think this class is interesting.
+
+(c)
+
+(i) $\forall x \exists y (H(x, y) \land I(x, y))$
+
+(ii) $\lnot \forall x \exists y H(x, y) \land I(x, y) = \exists x \forall y \lnot (H(x, y) \land I(x, y))$
+
+(iii) There is a student who thinks no class in which he enrolls is interesting.
+
+(d)
+
+(i) $\forall x \exists y_1 \exists y_2 (H(x, y_1) \land H(x, y_2) \land I(x, y_1) \land \lnot I(x, y_2))$
+
+(ii) $\lnot \forall x \exists y_1 \exists y_2 (H(x, y_1) \land H(x, y_2) \land I(x, y_1) \land \lnot I(x, y_2)) = \exists x \forall y_1 \forall y_2 \lnot(H(x, y_1) \land H(x, y_2) \land I(x, y_1) \land \lnot I(x, y_2))$
+
+(iii) There is a student for which for each pair of two different classes he is enrolled in he is interested by both or none.
+
+4.
+
+(a) 
+
+(i)
+
+$a$: There are bears in Springfield.
+
+$b$: This rock keeps tigers away.
+
+(ii) 
+
+Premises: $a$. $b$.
+
+Conclusion: $\lnot a \rightarrow b$.
+
+(iii) This is valid.
+
+(iv)
+
+1. $b$ Premise
+
+2. $a \lor b$ Domination by 1
+
+3. $\lnot a \rightarrow b$ Implication of 2 \hfill \textsc{q.e.d.}
+
+(b)
+
+(i)
+
+$a$: I have bacon for breakfast.
+
+$b$: I have salad for lunch.
+
+$c$: I wake up late.
+
+(ii)
+
+Premises: $a \rightarrow b$. $c \rightarrow \lnot a$. $\lnot b$.
+
+Conclusion: $\lnot c$.
+
+(iii) This is not valid.
+
+(iv) We can set $a$ to be false, $b$ to be false, and $c$ to be true, where the premises are all true but the conclusion is false.
+
+(c)
+
+(i)
+
+$a$: I play video games.
+
+$b$: My homework is finished.
+
+$c$: I ace the exam.
+
+$d$: I get an A.
+
+(ii)
+
+Premises: $a \rightarrow b$. $b \rightarrow c$. $\lnot \lnot c \rightarrow d$. $a$.
+
+Conclusion: $d$.
+
+(iii) This is valid.
+
+(iv)
+
+1. $a \rightarrow b$ Premise
+
+2. $b \rightarrow c$ Premise
+
+3. $\lnot \lnot c \rightarrow d$ Premise
+
+4. $c \rightarrow d$ Double negation on 3
+
+5. $a$ Premise
+
+6. $b$ Modus ponens of 5 and 1
+
+7. $c$ Modus ponens of 6 and 2
+
+8. $d$ Modus ponens of 7 and 4 \hfill \textsc{q.e.d.}
+
+(d)
+
+(i)
+
+$a$: Dogs have tails.
+
+$b$: Cats have tails.
+
+$c$: Elephants are pink.
+
+$d$: Elephants are purple.
+
+(ii)
+
+Premises: $a \lor b$. $\lnot a \lor c$. $\lnot b \lor d$.
+
+Conclusion: $c \lor d$.
+
+(iii) This is valid.
+
+(iv)
+
+1. $a \lor b$ Premise
+
+2. $\lnot a \lor c$ Premise
+
+3. $\lnot b \lor d$ Premise
+
+4. $\lnot a \rightarrow b$ Implication of 1
+
+5. $a \rightarrow c$ Implication of 2
+
+6. $b \rightarrow d$ Implication of 3
+
+7. $\lnot c \rightarrow \lnot a$ Contraposition of 5
+
+8. $\lnot c \rightarrow b$ Hypothetical syllogism of 7 and 4
+
+9. $\lnot c \rightarrow d$ Hypothetical syllogism of 8 and 6
+
+10. $c \lor d$ Implication of 9 \hfill \textsc{q.e.d.}
+
+
+
+
+\end{document}
+
